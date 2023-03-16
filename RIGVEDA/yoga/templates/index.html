@@ -1,0 +1,349 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rigveda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+  <style>
+        .LFT {
+            padding-left: 20vw;
+        }
+        .rad{
+            border-radius: 50%;
+            box-shadow:20px 20px 50px rgba(0,0,0,0.8);
+        }
+        .smallcase {
+            width: 30%;
+            height: auto;
+            margin-left: 35%;
+            margin-top: 10%;
+            margin-bottom: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="fixed-top p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'yoga/imageinverted-removebg-preview.png'%}" alt="Logo" width="130" height="50"
+                        class="d-inline-block align-text-top">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+
+                    <li><a href="#" class="nav-link px-2 text-white">Problem?</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Contact Us</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">About Us</a></li>
+                    <a href="{% url 'bmi'%}" class="nav-link px-2 text-white">BMI Calculator</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <a href="{% url 'User-Login'%}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                    <a href="{% url 'User-Signup'%}"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://source.unsplash.com/1080x540/?yoga" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Yoga</h1>
+                        <p>Yoga is a group of physical, mental, and spiritual practices or disciplines which
+                            originated
+                            in ancient India and aim to control (yoke) and still the mind, ...</p>
+                        <button type="button" class="btn btn-danger">Tips</button>
+                        <a href="{% url 'User-Signup'%}"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                       <a href="{% url 'User-Login'%}"><button type="button" class="btn btn-success">Login</button></a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/1080x540/?meditation" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Meditation</h1>
+                        <p>Meditation is a practice in which an individual uses a technique such as mindfulness, or
+                            focusing the mind on a particular object, thought, ...</p>
+                        <button type="button" class="btn btn-danger">Tips</button>
+                        <button type="button" class="btn btn-warning">Sign-up</button>
+                        <button type="button" class="btn btn-success">Login</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/1080x540/?healthy" class="d-block  w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Health</h1>
+                        <p>Health is a state of complete physical, mental and social well-being and not merely the
+                            absence of disease or infirmity. The enjoyment of the highest attainable standard of
+                            health
+                            is one of the fundamental rights of every human being without distinction of race,
+                            religion,
+                            political belief, economic or social condition.</p>
+                        <button type="button" class="btn btn-danger">Tips</button>
+                        <button type="button" class="btn btn-warning">Sign-up</button>
+                        <button type="button" class="btn btn-success">Login</button>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        <center> <strong>Hi!</strong> You should Login or Sign-Up for better service.</center>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6 tranarp">
+                <img src="{% static 'yoga/RIGVEDA.png'%}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="1000"
+                    height="700" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Yoga</h1>
+                <p class="lead">This program is to give you a personalized yoga recomendations so you can have healthy
+                    lifestyle. Yoga is a 5000 years old psycho-spiritual technique that focuses on creating harmony
+                    between the mind and the body. The efficacy of Yoga has been proven for certain medical conditions..
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Top three must do yogas</h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="arp1">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url(https://source.unsplash.com/540x540/?sun-salutation);background-size: 100% ;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Surya Namaskar</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="{% static 'yoga/yoga.png'%}"
+                                        alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#geo-fill" />
+                                    </svg>
+                                    <small>Benifits</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#calendar3" />
+                                    </svg>
+                                    <small>3d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arp2">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image:url(https://source.unsplash.com/540x540/?meditation); background-repeat: no-repeat; background-size: auto ;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Tadasan
+                            </h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="{% static 'yoga/yoga.png'%}" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#geo-fill" />
+                                    </svg>
+                                    <small>Benifits</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#calendar3" />
+                                    </svg>
+                                    <small>4d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="arp3">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url(https://source.unsplash.com/540x540/?yoga); background-repeat: no-repeat; background-size: 100% ;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Chakrasan</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="{%static 'yoga/yoga.png'%}"
+                                        alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#geo-fill" />
+                                    </svg>
+                                    <small>Benifits</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#calendar3" />
+                                    </svg>
+                                    <small>5d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'yoga/Meditation.jpeg'%}" class="d-block mx-lg-auto img-fluid rad" alt="Bootstrap Themes" width="1000"
+                    height="700" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Mediation</h1>
+                <p class="lead">
+                <h6></h6>
+                The emotional and physical benefits of meditation can include:
+                <ul>
+                    <li>Gaining a new perspective on stressful situations.</li>
+                    <li> Building skills to manage your stress.</li>
+                    <li>Increasing self-awareness.</li>
+                    <li> Focusing on the present.</li>
+                    <li> Reducing negative emotions.</li>
+                    <li>Increasing imagination and creativity.</li>
+                    <li>Increasing patience and tolerance.</li>
+                </ul>
+
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Sports</h1>
+                <p class="lead">
+                    Sports are all forms of competitive physical activity that aims to utilize, maintain or enhance
+                    physical ability and skills through casual or organized participation.
+
+                    Sports have a significant effect on a person’s daily life and health, both physical and mental.
+                    While you are involved in any kind of sports, intense physical activity improves heart function,
+                    decreases the risk of diabetes, and reduces blood pressure and stress levels.
+                </p>
+
+            </div>
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'yoga/Sport.jpeg'%}" class="d-block mx-lg-auto img-fluid rad" alt="Bootstrap Themes" width="1000"
+                    height="700" loading="lazy">
+            </div>
+           
+
+        </div>
+    </div>
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'yoga/Diet.jpeg'%}" class="d-block mx-lg-auto img-fluid rad" alt="Bootstrap Themes" width="1000"
+                    height="700" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Healthy diet</h1>
+                <p class="lead">
+                    An eating plan that helps manage your weight includes a variety of healthy foods. Add an array of
+                    colors to your plate and think of it as eating the rainbow. Dark, leafy greens, oranges, and
+                    tomatoes—even fresh herbs—are loaded with vitamins, fiber, and minerals. Adding frozen peppers,
+                    broccoli, or onions to stews and omelets gives them a quick and convenient boost of color and
+                    nutrients.
+
+
+                </p>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center text-white" style="background-color: black;">
+        <div class="container p-4">
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-warning">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-warning">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-warning">Dashbord</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-warning">Contact Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-warning">About</a></li>
+            </ul>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022-23 Rigveda:
+            <br>
+            <a class="text-white" href="https://www.linkedin.com/in/aryendu-kumar-150707249/">aryendu.21b1541174@abes.ac.in</a>
+            <br>
+            <a class="text-white" href="https://www.linkedin.com/in/aditya--srivastava/">aditya.srivastava@abes.ac.in</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
